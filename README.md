@@ -19,7 +19,7 @@ To make the dashboard work, you need:
 1. Install grafana server: follow instructions [here](#install_grafana)
 2. Install alloy agent on your nodes **<span style="color:red">(this only works on Ubuntu 22.04 and Debian 12)</span>** 
 ```
-bash <(wget -qO- https://raw.githubusercontent.com/fpatron/Quilibrium-Dashboard/master/grafana/exporter/install_linux.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/0xOzgur/Quilibrium-Dashboard/master/grafana/exporter/install_linux.sh)
 ```
 3. Import grafana Dashboard: follow instructions [here](#import_dashboard)
 
@@ -52,7 +52,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 cd
 mkdir grafana
 cd grafana
-wget https://raw.githubusercontent.com/fpatron/Quilibrium-Dashboard/master/grafana/docker/docker-compose.yml
+wget https://raw.githubusercontent.com/0xOzgur/Quilibrium-Dashboard/master/grafana/docker/docker-compose.yml
 sudo docker compose up -d
 ```
 * Create your own Grafana instance on a VM or server of your choice
@@ -124,8 +124,8 @@ It is necessary to install the custom node exporter on each node you want to mon
 * Get files [quilibrium_exporter.py](grafana/exporter/quilibrium_exporter.py) [requirements.txt](grafana/exporter/requirements.txt) into
 ```
 cd ~/quilibrium/exporter
-wget https://github.com/fpatron/Quilibrium-Dashboard/raw/master/grafana/exporter/quilibrium_exporter.py
-wget https://github.com/fpatron/Quilibrium-Dashboard/raw/master/grafana/exporter/requirements.txt
+wget https://github.com/0xOzgur/Quilibrium-Dashboard/raw/master/grafana/exporter/quilibrium_exporter.py
+wget https://github.com/0xOzgur/Quilibrium-Dashboard/raw/master/grafana/exporter/requirements.txt
 ```
 * Go to your node directory (/home/user/quilibrium/ceremonyclient/node for ie)
 * Prepare python environment
@@ -230,7 +230,7 @@ Go to your Grafana instance
 
 3. Import the dashboard
     * Go to Home > Dashboard
-    * Download the dashboard in [JSON format](https://raw.githubusercontent.com/fpatron/Quilibrium-Dashboard/master/grafana/dashboard/quilibrium-dashboard.json)
+    * Download the dashboard in [JSON format](https://raw.githubusercontent.com/0xOzgur/Quilibrium-Dashboard/master/grafana/dashboard/quilibrium-dashboard.json)
     * Click on the "New" > "Import" button
     * Upload the dashboard in JSON format
     * Select the various datasources

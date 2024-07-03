@@ -108,8 +108,8 @@ install_quilibrium_exporter() {
     exporter_path=$(pwd)
 
     echo "Downloading the Quilibrium exporter script and requirements..."
-    wget https://github.com/fpatron/Quilibrium-Dashboard/raw/master/grafana/exporter/quilibrium_exporter.py
-    wget https://github.com/fpatron/Quilibrium-Dashboard/raw/master/grafana/exporter/requirements.txt
+    wget https://github.com/0xOzgur/Quilibrium-Dashboard/raw/master/grafana/exporter/quilibrium_exporter.py
+    wget https://github.com/0xOzgur/Quilibrium-Dashboard/raw/master/grafana/exporter/requirements.txt
 
     echo "Installing Python3, pip, and virtualenv..."
     sudo apt update
@@ -164,7 +164,7 @@ install_grafana_alloy() {
 configure_grafana_alloy() {
     echo "Configuring Grafana Alloy..."
     sudo mkdir -p /etc/alloy
-    wget https://raw.githubusercontent.com/fpatron/Quilibrium-Dashboard/master/grafana/alloy/config.alloy -O /tmp/config.alloy
+    wget https://raw.githubusercontent.com/0xOzgur/Quilibrium-Dashboard/master/grafana/alloy/config.alloy -O /tmp/config.alloy
 
     # Replace variables in the config file
     sed -i "s|<PROMETHEUS_ENDPOINT>|$prometheus_url|g" /tmp/config.alloy
@@ -178,6 +178,8 @@ configure_grafana_alloy() {
 
     # Restart Alloy service
     echo "Restarting Grafana Alloy service..."
+    sudo systemctl daemon-reload
+    sudo systemctl enable alloy
     sudo systemctl restart alloy
 }
 
